@@ -1,1 +1,1 @@
-alert('Hello Word')
+// alert('Hello Word')
