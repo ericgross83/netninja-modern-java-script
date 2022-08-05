@@ -25,10 +25,10 @@ form.addEventListener('submit', (e) => {
     let intervalId = -1
     let output = 0
     intervalId = setInterval(()=> {
-        output++
         result.querySelector('span').textContent = `${output}%`
-        if(output === score) {
+        if(output >= score) {
             clearInterval(intervalId)
         }
+        output++
     }, 20)
 })
