@@ -8,3 +8,4 @@ let name = localStorage.getItem('name')
 console.log(name);
 
 // updating data
+localStorage.setItem('name', 'eric')
