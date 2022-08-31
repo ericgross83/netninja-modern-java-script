@@ -43,10 +43,24 @@ form.addEventListener('submit', (e) => {
 
     const city = form.city.value.trim()
     form.reset()
-
+    
     // update the ui with new city
     updateCity(city)
-        .then(data => updateUI(data))
-        .catch(err => console.log(err))
-
+    .then(data => updateUI(data))
+    .catch(err => console.log(err))
+    
+    // set local storage
+    localStorage.setItem('city', city)
 })
+
+const fetchDataForLocalStorage = () => { 
+  const city = localStorage.getItem('city')
+
+  if (city) {
+    updateCity(city)
+    .then(data => updateUI(data))
+    .catch(err => console.log(err))
+  }
+ }
+
+ fetchDataForLocalStorage()
